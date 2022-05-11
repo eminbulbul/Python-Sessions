@@ -154,6 +154,9 @@ class Lang:
     def __init__(self, langs):
         self.langs = langs
 
+    def display_langs(self):
+        print(self.langs)
+
 
 class Employee(Person, Lang):
     def __init__(self, name, age, path, langs):
@@ -161,6 +164,8 @@ class Employee(Person, Lang):
         # self.age = age
         super().__init__(name, age)  # parentten bu sekilde age ve name i cekecegiz
         self.path = path
+        # self.langs = langs
+        Lang.__init__(self, langs)
     # override bu ozelligi cok kullanacagiz iyi ogrenmek lazim
 
     def get_details(self):
@@ -172,6 +177,7 @@ class Employee(Person, Lang):
 
 emp1 = Employee('Emin', 31, 'Fullstack', ['Python', 'Js'])
 emp1.get_details()
+emp1.display_langs()
 
 # person1 = Person('Aaron', 37)
 # person1.get_details()

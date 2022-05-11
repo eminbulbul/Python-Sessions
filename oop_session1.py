@@ -1,3 +1,4 @@
+from django.db import models
 from ast import Lambda
 import os
 os.system('cls'if os.name == 'nt' else 'clear')
@@ -166,7 +167,7 @@ class Employee(Person, Lang):
         self.path = path
         # self.langs = langs
         Lang.__init__(self, langs)
-    # override bu ozelligi cok kullanacagiz iyi ogrenmek lazim
+        # override bu ozelligi cok kullanacagiz iyi ogrenmek lazim
 
     def get_details(self):
         # print(self.name, self.age, self.path)
@@ -181,3 +182,7 @@ emp1.display_langs()
 
 # person1 = Person('Aaron', 37)
 # person1.get_details()
+
+print(Employee.mro())
+
+# inner class
